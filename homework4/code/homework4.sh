@@ -73,7 +73,7 @@ usage(){
 ## Hints: Use the information at Tutorial 4 slides: 41, 44, 47, 55, Ex4.14, 62
 if [[ $# < 1 ]]; then
    echo "Missing parameters. Exiting...";
-   #exit 0;
+   exit 0;
 else
     exit 1;
 fi
