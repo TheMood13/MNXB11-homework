@@ -71,14 +71,14 @@ usage(){
 ## otherwise exit with error (make sure that the exit code is not 0!)
 ## Printout the usage information using the provided `usage` function
 ## Hints: Use the information at Tutorial 4 slides: 41, 44, 47, 55, Ex4.14, 62
-if [[ $# < 1 ]]; then
-   echo "Missing parameters. Exiting...";
-   exit 0;
-else
+if [[ $# -lt 1 ]]; then
+    echo "Missing parameters. Exiting...";
     exit 1;
+else
+    exit 0;
 fi
 #Printing out usage information, uncomment if needed:
-#usage
+usage
 
 # E2 (1 point) Store all parameters into the following variable URL
 ## The script should be able to handle any number of parameters allowed by bash.
@@ -122,7 +122,7 @@ for url in $URLS; do
     ## Hints: See https://www.linuxandubuntu.com/home/12-practical-examples-of-wget-command-on-linux?expand_article=1 about
     ## selecting a filename and https://www.gnu.org/software/wget/manual/html_node/Logging-and-Input-File-Options.html
     ## to "append" to logfile. 
-    wget -a logfile <$url> -O $CURRENTINPUTFILE
+    wget -a wget.log $url -O $CURRENTINPUTFILE
     
     # E7 (1 point) Test if the download was successful
     ## A successful download will make wget exit with exit status == 0
